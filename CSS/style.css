@@ -1,0 +1,97 @@
+body {
+    width: 375px;
+    height: 100%;
+    background-color: #E5E5E5;
+}
+
+.topo {
+    width: 375px;
+    height: 80px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 20px grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.topo img {
+    width: 75px;
+    height: 53px;
+    margin-left: 22px;
+}
+
+.topo ion-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 22px;
+}
+
+
+.caixa-mensagens {
+    width: 375px;
+    height: 450px;
+    position: fixed;
+    top: 106px;
+}
+
+.mensagens {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700px;
+}
+
+
+.mensagem {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+.caixa-escreva {
+    width: 375px;
+    height: 80px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 20px grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+}
+
+.escreva {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400px;
+    margin-left: 18px;
+}
+
+.caixa-escreva ion-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 18px;
+}
+
+
+.status {
+    height: 100%;
+    padding: 10px;
+    background-color: #DCDCDC;
+}
+
+.normal {
+    height: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+}
+
+.reservada {
+    height: 100%;
+    padding: 10px;
+    background-color: #FFDEDE;
+}
