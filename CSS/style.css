@@ -32,7 +32,7 @@ body {
 
 .caixa-mensagens {
     width: 375px;
-    height: 450px;
+    height: 420px;
     position: fixed;
     top: 106px;
 }
@@ -42,7 +42,6 @@ body {
     font-size: 14px;
     font-weight: 700px;
 }
-
 
 .mensagem {
     margin-top: 4px;
@@ -84,14 +83,22 @@ body {
     background-color: #DCDCDC;
 }
 
-.normal {
+.message {
     height: 100%;
     padding: 10px;
     background-color: #FFFFFF;
 }
 
-.reservada {
+.private_message {
     height: 100%;
     padding: 10px;
     background-color: #FFDEDE;
+}
+
+.names {
+    font-weight: bold;
+}
+
+.time {
+    color: #AAAAAA;
 }
