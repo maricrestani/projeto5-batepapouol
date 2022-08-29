@@ -29,23 +29,29 @@ body {
     margin-right: 22px;
 }
 
-
 .caixa-mensagens {
     width: 375px;
     height: 420px;
     position: fixed;
     top: 106px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .mensagens {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 700px;
+    width: 360px;
+    height: auto;
 }
 
 .mensagem {
     margin-top: 4px;
     margin-bottom: 4px;
+    margin-right: 4px;
+    width: 360px;
+    height: auto;
 }
 
 

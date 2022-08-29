@@ -13,22 +13,17 @@ function entrarNaSala() {
 
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants', novoNome);
 
-    promessa.then(deuCerto);
+    promessa.then(pegarDadosChat);
     promessa.catch(pedirNovoNome);
-
 }
 
 function pedirNovoNome(erro) {
-    while (erro.response.status === 400) {
+    if (erro.response.status === 400) {
         alert("Esse nome de usuário já existe, por favor, digite outro");
-        let nome = "";
         entrarNaSala()
     }
 }
 
-function deuCerto(resposta) {
-    pegarDadosChat()
-}
 
 function verificarStatus() {
 
@@ -39,17 +34,21 @@ function verificarStatus() {
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', novoNome);
 
     promessa.then(statusAtualizou);
+    //promessa.catch(deuErro);
 }
+
 
 function statusAtualizou() {
     console.log("status atualizado");
 }
+
 
 function pegarDadosChat(resposta) {
 
     const promessa = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages');
 
     promessa.then(renderizarChat);
+    promessa.catch(deuErro);
 }
 
 
@@ -83,37 +82,37 @@ function renderizarChat(resposta) {
 
     let mensagemMaisRecente = document.querySelector(".mensagens").lastElementChild;
     mensagemMaisRecente.scrollIntoView();
-
-    atualizarChat();
 }
 
 function atualizarChat() {
-    setInterval(pegarDadosChat, 3000);
+    pegarDadosChat();
     console.log("chat atualizou");
-
 }
 
 
 function enviarMensagem() {
 
     let mensagemEscrita = document.querySelector(".escreva");
-    console.log(mensagemEscrita)
 
     const msg = {
-        from: "nome",
+        from: nome,
         to: "Todos",
         text: mensagemEscrita.value,
         type: "message"
     }
 
     const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', msg);
-    promessa.then(pegarDadosChat);
-    promessa.catch(pedirNovoNome);
-    console.log(msg)
 
+    promessa.then(pegarDadosChat);
+    promessa.catch(deuErro);
 }
 
+function deuErro(erro) {
+    if (erro.response.status === 400) {
+        window.location.reload();
+    }
+}
 
 entrarNaSala()
 setInterval(verificarStatus, 5000);
-
+setInterval(atualizarChat, 3000);
