@@ -84,20 +84,36 @@ function renderizarChat(resposta) {
     let mensagemMaisRecente = document.querySelector(".mensagens").lastElementChild;
     mensagemMaisRecente.scrollIntoView();
 
-    console.log("chatRenderizado")
     atualizarChat();
 }
 
 function atualizarChat() {
-    setInterval(renderizarChat, 3000);
+    setInterval(pegarDadosChat, 3000);
+    console.log("chat atualizou");
 
 }
 
 
+function enviarMensagem() {
+
+    let mensagemEscrita = document.querySelector(".escreva");
+    console.log(mensagemEscrita)
+
+    const msg = {
+        from: "nome",
+        to: "Todos",
+        text: mensagemEscrita.value,
+        type: "message"
+    }
+
+    const promessa = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', msg);
+    promessa.then(pegarDadosChat);
+    promessa.catch(pedirNovoNome);
+    console.log(msg)
+
+}
+
 
 entrarNaSala()
 setInterval(verificarStatus, 5000);
-
-
-
 
