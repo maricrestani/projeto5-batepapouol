@@ -107,6 +107,7 @@ function enviarMensagem() {
     promessa.catch(deuErro);
 }
 
+
 function deuErro(erro) {
     if (erro.response.status === 400) {
         window.location.reload();
@@ -116,3 +117,5 @@ function deuErro(erro) {
 entrarNaSala()
 setInterval(verificarStatus, 5000);
 setInterval(atualizarChat, 3000);
+
+//versao final sem bônus

@@ -31,9 +31,9 @@ body {
 
 .caixa-mensagens {
     width: 375px;
-    height: 420px;
+    height: 430px;
     position: fixed;
-    top: 106px;
+    top: 96px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -108,3 +108,9 @@ body {
 .time {
     color: #AAAAAA;
 }
+
+.ion:hover {
+    filter: opacity(0.5)
+}
+
+/* versao final sem bônus */
